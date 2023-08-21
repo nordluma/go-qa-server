@@ -18,11 +18,11 @@ func addQuestionRoutes(rg *gin.RouterGroup) {
 func setupRoutes() *gin.Engine {
 	r := gin.Default()
 	r.Use(cors.Default())
-	routes := r.Group("/v1")
-	routes.GET("/health_check", func(ctx *gin.Context) {
+	r.GET("/health_check", func(ctx *gin.Context) {
 		ctx.Status(200)
 	})
 
+	routes := r.Group("/v1")
 	addQuestionRoutes(routes)
 
 	return r
