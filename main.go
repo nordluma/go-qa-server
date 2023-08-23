@@ -13,6 +13,7 @@ func setupRoutes() *gin.Engine {
 
 	routesV1 := r.Group("/v1")
 	routes.AddQuestionRoutes(routesV1)
+	routes.AddAnswerRoutes(routesV1)
 
 	return r
 }
